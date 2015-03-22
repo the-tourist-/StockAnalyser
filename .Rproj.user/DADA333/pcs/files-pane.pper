@@ -1,0 +1,9 @@
+{
+    "path" : "~/GitHub/StockAnalyser",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}

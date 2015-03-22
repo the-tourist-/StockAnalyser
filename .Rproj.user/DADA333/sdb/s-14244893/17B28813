@@ -1,0 +1,17 @@
+{
+    "contents" : "library(shiny)\nlibrary(lubridate)\nlibrary(PerformanceAnalytics)\nlibrary(quantmod)\n\ngetSymbols(\"^GSPC\")\n\nshinyServer(\n  function(input, output) {\n    #FromDate <- today()\n    #year(FromDate) <- year(FromDate) - 1\n    #output$Temp <- as.character(FromDate)\n\n    Symbol <- reactive({\n      input$LookupButton\n      isolate(toupper(input$Symbol))\n    })\n\n    FullResults <- reactive({\n      if (Symbol() != \"\") {\n        getSymbols(Symbol())\n        Intermediate <- get(Symbol())\n        adjustOHLC(Intermediate, symbol.name=Symbol())\n      }\n    })\n\n    Prices <- reactive({\n      FullResults()[paste(input$FromDate, \"/\")]\n    })\n\n    GSPCPrices <- reactive({\n      GSPC[paste(input$FromDate, \"/\")]\n    })\n\n    Returns <- reactive({\n      dailyReturn(Prices())\n    })\n\n    GSPCReturns <- reactive({\n      dailyReturn(GSPCPrices())\n    })\n\n    MonthlyReturns <- reactive({\n      monthlyReturn(Prices())\n    })\n\n    MonthlyGSPCReturns <- reactive({\n      monthlyReturn(GSPCPrices())\n    })\n\n    PairedReturns <- reactive({\n      Intermediate <- cbind(Returns(), GSPCReturns())\n      colnames(Intermediate) <- c(Symbol(), \"S&P 500\")\n      Intermediate\n    })\n\n    PairedMonthlyReturns <- reactive({\n      Intermediate <- cbind(MonthlyReturns(), MonthlyGSPCReturns())\n      colnames(Intermediate) <- c(Symbol(), \"S&P 500\")\n      Intermediate\n    })\n\n    output$Chart <- renderPlot({\n      if (Symbol() == \"\")\n        NULL\n      else {\n        #chartSeries(Prices(), log.scale = T, type=\"bars\", name=Symbol(), minor.ticks = F)\n        charts.PerformanceSummary(PairedReturns(), colorset=rich6equal[-1], lwd=2, ylog=TRUE)\n      }\n    },\n    res=144)\n\n    output$MonthlyReturns <- renderTable({\n      if (Symbol() == \"\")\n        NULL\n      else\n        table.CalendarReturns(PairedMonthlyReturns())\n    })\n\n    output$MonthlyStats <- renderTable({\n      if (Symbol() == \"\")\n        NULL\n      else\n        table.Stats(PairedMonthlyReturns())\n    })\n  }\n)",
+    "created" : 1427025994731.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3053806532",
+    "id" : "17B28813",
+    "lastKnownWriteTime" : 1427049694,
+    "path" : "~/GitHub/StockAnalyser/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

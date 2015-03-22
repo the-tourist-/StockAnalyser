@@ -1,0 +1,5 @@
+name: StockAnalyser
+account: graeme
+server: shinyapps.io
+bundleId: 151616
+url: http://graeme.shinyapps.io/StockAnalyser
