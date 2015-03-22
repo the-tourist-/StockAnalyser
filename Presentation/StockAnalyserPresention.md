@@ -1,0 +1,33 @@
+Stock Analyser Presention
+========================================================
+author: Graeme Smith
+date: March 22, 2015
+transition: rotate
+
+What does the App do
+========================================================
+
+This App uses the quantmod and PortfolioAnalytics packages to do analysis of a stock's price history.  It allows the user to enter a stock symbol and a start date and will produce several graphs and perform some statistical analysis of the stocks price history over the selected period.
+
+Graphs Produced
+========================================================
+
+*chart.PerformanceSummary* is used to produce a three panel graph with
+- Cummulative Return
+- Daily Return
+- Drawdown
+
+Statistics Produced
+========================================================
+
+The following tables are created :
+- *table.CalendarReturns* is used to create a table of monthly returns
+- *table.Stats* is used to create a table with various monthly statistics
+
+Other Elements
+========================================================
+
+- Uses an Action button to wait until the stock symbol is completely entered so that the App doesn't react to partially entered symbols
+- Reactively acts to Start Date entry
+- Uses the Cerulean bootstrap theme to make the user interface more pleasing to look at
+
