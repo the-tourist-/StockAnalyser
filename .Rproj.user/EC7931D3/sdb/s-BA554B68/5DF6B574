@@ -1,0 +1,17 @@
+{
+    "contents" : "library(shiny)\n\nshinyUI(\n  pageWithSidebar(\n    headerPanel(\"Portfolio Analyser\"),\n    sidebarPanel(\n      h3(\"Enter Stock Symbol\")\n    ),\n    mainPanel(\n      h3(\"Main Panel\")\n    )\n  )\n)",
+    "created" : 1427024597435.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3621130676",
+    "id" : "5DF6B574",
+    "lastKnownWriteTime" : 1427025340,
+    "path" : "D:/GitHub/StockAnalyser/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : true,
+    "type" : "r_source"
+}

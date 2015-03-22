@@ -1,0 +1,17 @@
+{
+    "contents" : "library(shiny)\n\nshinyServer(\n  function(input, output) {\n\n  }\n)",
+    "created" : 1427025050162.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2760641130",
+    "id" : "6BB5967D",
+    "lastKnownWriteTime" : 1427025348,
+    "path" : "D:/GitHub/StockAnalyser/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : true,
+    "type" : "r_source"
+}
