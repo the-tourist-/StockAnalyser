@@ -1,0 +1,16 @@
+{
+    "contents" : "Stock Analyser Presention\n========================================================\nauthor: Graeme Smith\ndate: `r format(Sys.Date(), format=\"%B %d, %Y\")`\ntransition: rotate\n\nWhat does the App do\n========================================================\n\nThis App uses the quantmod and PortfolioAnalytics packages to do analysis of a stock's price history.  It allows the user to enter a stock symbol and a start date and will produce several graphs and perform some statistical analysis of the stocks price history over the selected period.\n\nGraphs Produced\n========================================================\n\n*chart.PerformanceSummary* is used to produce a three panel graph with\n- Cummulative Return\n- Daily Return\n- Drawdown\n\nStatistics Produced\n========================================================\n\nThe following tables are created :\n- *table.CalendarReturns* is used to create a table of monthly returns\n- *table.Stats* is used to create a table with various monthly statistics\n\nOther Elements\n========================================================\n\n- Uses an Action button to wait until the stock symbol is completely entered so that the App doesn't react to partially entered symbols\n- Reactively acts to Start Date entry\n- Uses the Cerulean bootstrap theme to make the user interface more pleasing to look at\n\n",
+    "created" : 1427062485168.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3437014552",
+    "id" : "986C201D",
+    "lastKnownWriteTime" : 1427062488,
+    "path" : "D:/GitHub/StockAnalyser/Presentation/StockAnalyserPresention.Rpres",
+    "project_path" : "Presentation/StockAnalyserPresention.Rpres",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_presentation"
+}
